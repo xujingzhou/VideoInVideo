@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>21A5D5B0-43DC-4FD2-A140-D9A4368FF759</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PictureInPicture</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>42A551E60472DB60CD4AA112E738F745D0C1CBE6</key>
+		<string>https://github.com/xujingzhou/VideoInVideo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PictureInPicture.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>42A551E60472DB60CD4AA112E738F745D0C1CBE6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/xujingzhou/VideoInVideo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>42A551E60472DB60CD4AA112E738F745D0C1CBE6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>42A551E60472DB60CD4AA112E738F745D0C1CBE6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PictureInPicture(1.0)</string>
+		</dict>
+	</array>
+</dict>
+</plist>

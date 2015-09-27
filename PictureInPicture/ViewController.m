@@ -212,11 +212,13 @@ typedef NS_ENUM(NSInteger, SelectedMediaType)
     
     NSString *embedGifOrVideoTitle = [NSString stringWithFormat:@"%@%@", GBLocalizedString(@"Step2"), GBLocalizedString(@"SelectGifOrVideo")];
     JGActionSheetSection *sectionGifOrVideo = [JGActionSheetSection sectionWithTitle:embedGifOrVideoTitle message:nil buttonTitles:
-                                          @[
-                                            GBLocalizedString(@"Camera")
-                                            ]
-                                                                    buttonStyle:JGActionSheetButtonStyleDefault];
+                                               @[
+                                                 GBLocalizedString(@"Camera"),
+                                                 GBLocalizedString(@"PhotoAlbum")
+                                                 ]
+                                                                         buttonStyle:JGActionSheetButtonStyleDefault];
     [sectionGifOrVideo setButtonStyle:JGActionSheetButtonStyleBlue forButtonAtIndex:0];
+    [sectionGifOrVideo setButtonStyle:JGActionSheetButtonStyleBlue forButtonAtIndex:1];
     
     NSString *resultTitle = [NSString stringWithFormat:@"%@%@", GBLocalizedString(@"Step3"), GBLocalizedString(@"Export")];
     JGActionSheetSection *sectionResult = [JGActionSheetSection sectionWithTitle:resultTitle message:nil buttonTitles:
@@ -294,6 +296,21 @@ typedef NS_ENUM(NSInteger, SelectedMediaType)
              {
                  // Video
                  [self performSelector:@selector(pickEmbededVideoFromCamera) withObject:nil afterDelay:0.1];
+             }
+             else if (indexPath.row == 1)
+             {
+                 // Check permisstion for photo album
+                 ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
+                 if (authStatus == ALAuthorizationStatusRestricted || authStatus == ALAuthorizationStatusDenied)
+                 {
+                     [self performSelectorOnMainThread:@selector(popupAuthorizationHelper:) withObject:[NSNumber numberWithLong:DBPrivacyTypePhoto] waitUntilDone:YES];
+                     return;
+                 }
+                 else
+                 {
+                     // Has permisstion to execute
+                     [self performSelector:@selector(pickEmbededVideoFromPhotosAlbum) withObject:nil afterDelay:0.1];
+                 }
              }
          }
          else if (indexPath.section == 2)
@@ -1194,8 +1211,8 @@ typedef NS_ENUM(NSInteger, SelectedMediaType)
         }
         case 2:
         {
-            // BeautyTime
-            [self showAppInAppStore:@"964149617"];
+            // Photo & Video Splice
+            [self showAppInAppStore:@"1035146702"];
             break;
         }
         default:
